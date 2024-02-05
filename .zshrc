@@ -83,6 +83,7 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  history
   # dotenv
 )
 
@@ -92,7 +93,16 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH="$HOME/go/bin/:$PATH"
+# Deno
+export DENO_INSTALL="/externals/deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Turso
+export PATH="/externals/turso:$PATH"
+
+# Deta Space
+export PATH="/externals/detaspace/bin:$PATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -115,6 +125,7 @@ export PATH="$HOME/go/bin/:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gen_secret="openssl rand -base64 32"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
